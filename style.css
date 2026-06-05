@@ -1,0 +1,241 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Mapeamento da nova paleta de cores */
+    --primary-color: #b50b31;      /* Vermelho escuro/Vinho (Destaques e links principais) */
+    --secondary-color: #e97b99;    /* Rosa médio (Elementos de ação, botões e hovers) */
+    --bg-light: #f3bcca;           /* Rosa claro/Pastel (Fundos leves e áreas suaves) */
+    --bg-extra-light: #fdf5f7;     /* Variação ultra leve para o fundo geral não saturar os olhos */
+    --text-dark: #2c1a1d;          /* Tom escuro quente para máxima legibilidade do texto */
+    --text-white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-extra-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container-narrow {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Modificadores de cor de fundo e texto */
+.bg-light { background-color: var(--bg-light); }
+.bg-primary { background-color: var(--primary-color); }
+.text-white { color: var(--text-white); }
+.text-center { text-align: center; }
+.text-primary { color: var(--primary-color); }
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    color: var(--primary-color);
+}
+
+/* Header & Menu */
+header {
+    background-color: var(--text-white);
+    box-shadow: 0 2px 10px rgba(181, 11, 49, 0.08); /* Sombra sutil com a cor tema */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color); /* Atualizado para se destacar no topo branco */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li { margin-left: 20px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover { color: var(--primary-color); }
+
+/* Botão de navegação de destaque */
+.btn-nav {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-nav:hover { 
+    background-color: var(--primary-color); 
+}
+
+/* Seção: Quem Sou */
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.quem-sou-texto { flex: 1; }
+.quem-sou-foto { flex: 1; display: flex; justify-content: center; }
+
+.foto-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: var(--bg-light); /* Adaptado para o rosa pastel */
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Áreas de Atuação (Cards) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(181, 11, 49, 0.04);
+    text-align: center;
+    border-top: 4px solid var(--secondary-color); /* Detalhe elegante no topo do card */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover { 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(181, 11, 49, 0.1);
+}
+
+.card-icon { 
+    font-size: 2.5rem; 
+    color: var(--primary-color); 
+    margin-bottom: 15px; 
+}
+
+/* Capacitações */
+.lista-capacitacoes {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lista-capacitacoes li {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 5px solid var(--primary-color); /* Marcador lateral com a cor forte */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Localização */
+.mapa-placeholder {
+    height: 300px;
+    background: var(--bg-light);
+    opacity: 0.8;
+    margin-top: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Resultados (Contadores) */
+.contador-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contador-item h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+/* Ebook Call to Action (Invertido para dar contraste na seção escura) */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--text-white);
+    color: var(--primary-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+}
+
+/* Rodapé */
+footer {
+    background: var(--primary-color); /* Invertido para um fechamento marcante e legível */
+    color: var(--bg-light);
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Responsividade (Telas menores/Celular) */
+@media (max-width: 768px) {
+    .flex-row { flex-direction: column; text-align: center; }
+    nav ul { display: none; } 
+    .contador-grid { flex-direction: column; gap: 30px; }
+    h2 { font-size: 2rem; }
+}
