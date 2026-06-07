@@ -8,12 +8,12 @@
 }
 
 :root {
-    /* Mapeamento da nova paleta de cores */
-    --primary-color: #b50b31;      /* Vermelho escuro/Vinho (Destaques e links principais) */
-    --secondary-color: #e97b99;    /* Rosa médio (Elementos de ação, botões e hovers) */
-    --bg-light: #f3bcca;           /* Rosa claro/Pastel (Fundos leves e áreas suaves) */
-    --bg-extra-light: #fdf5f7;     /* Variação ultra leve para o fundo geral não saturar os olhos */
-    --text-dark: #2c1a1d;          /* Tom escuro quente para máxima legibilidade do texto */
+    /* Mapeamento da nova paleta de cores (Verde Oliva, Vermelho Escuro, Verde Claro e Bege) */
+    --primary-color: #77a881;       /* Verde Oliva (Cor principal, passa sobriedade e saúde) */
+    --secondary-color: #8B1E2F;     /* Vermelho Escuro/Vinho (Destaques, botões importantes e hovers) */
+    --bg-light: #C2D1C6;            /* Verde Claro (Fundos de seções e detalhes suaves) */
+    --bg-extra-light: #F7F5F0;      /* Bege Claro/Areia (Fundo geral do site, super confortável para os olhos) */
+    --text-dark: #2F3631;           /* Grafite bem escuro com toque oliva para textos principais */
     --text-white: #ffffff;
 }
 
@@ -56,7 +56,7 @@ h2 {
 /* Header & Menu */
 header {
     background-color: var(--text-white);
-    box-shadow: 0 2px 10px rgba(181, 11, 49, 0.08); /* Sombra sutil com a cor tema */
+    box-shadow: 0 2px 10px rgba(74, 93, 78, 0.08); /* Sombra sutil baseada no Verde Oliva */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -72,9 +72,11 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color); /* Atualizado para se destacar no topo branco */
+    color: var(--primary-color); 
 }
-
+.menu-mobile{
+    display: none;
+}
 nav ul {
     display: flex;
     list-style: none;
@@ -90,11 +92,11 @@ nav ul li a {
     transition: color 0.3s;
 }
 
-nav ul li a:hover { color: var(--primary-color); }
+nav ul li a:hover { color: var(--secondary-color); } /* Troca para o vermelho escuro no hover para destacar */
 
 /* Botão de navegação de destaque */
 .btn-nav {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: white !important;
     padding: 8px 16px;
     border-radius: 5px;
@@ -102,7 +104,7 @@ nav ul li a:hover { color: var(--primary-color); }
 }
 
 .btn-nav:hover { 
-    background-color: var(--primary-color); 
+    background-color: var(--secondary-color); 
 }
 
 /* Seção: Quem Sou */
@@ -115,17 +117,18 @@ nav ul li a:hover { color: var(--primary-color); }
 .quem-sou-texto { flex: 1; }
 .quem-sou-foto { flex: 1; display: flex; justify-content: center; }
 
-.foto-placeholder {
+.foto-placeholder img {
     width: 300px;
     height: 300px;
-    background-color: var(--bg-light); /* Adaptado para o rosa pastel */
-    border: 3px solid var(--secondary-color);
+    background-color: var(--bg-light); 
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
     font-weight: bold;
+    object-fit: cover;
 }
 
 /* Áreas de Atuação (Cards) */
@@ -140,20 +143,20 @@ nav ul li a:hover { color: var(--primary-color); }
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(181, 11, 49, 0.04);
+    box-shadow: 0 4px 15px rgba(74, 93, 78, 0.05); /* Ajustado para o tom oliva */
     text-align: center;
-    border-top: 4px solid var(--secondary-color); /* Detalhe elegante no topo do card */
+    border-top: 4px solid var(--primary-color); /* Detalhe elegante no topo do card */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover { 
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(181, 11, 49, 0.1);
+    box-shadow: 0 8px 25px rgba(74, 93, 78, 0.12);
 }
 
 .card-icon { 
     font-size: 2.5rem; 
-    color: var(--primary-color); 
+    color: var(--secondary-color); /* Ícones em Vermelho Escuro para dar um belo contraste */
     margin-bottom: 15px; 
 }
 
@@ -169,7 +172,7 @@ nav ul li a:hover { color: var(--primary-color); }
     padding: 15px 20px;
     margin-bottom: 15px;
     border-radius: 5px;
-    border-left: 5px solid var(--primary-color); /* Marcador lateral com a cor forte */
+    border-left: 5px solid var(--primary-color); 
     display: flex;
     align-items: center;
     gap: 15px;
@@ -188,26 +191,76 @@ nav ul li a:hover { color: var(--primary-color); }
     justify-content: center;
     color: var(--primary-color);
     font-weight: 500;
+    justify-content: space-between;
+}
+.mapa-placeholder img{
+    width: 50%;
+    height: 300px;
 }
 
-/* Resultados (Contadores) */
+/* Resultados (Contadores e Cards de Feedback) */
 .contador-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Distribui em colunas iguais de forma automática */
+    gap: 30px; /* Cria um espaçamento perfeito entre os cards */
+    margin-top: 40px;
+    align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+}
+
+.contador-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(74, 93, 78, 0.05); /* Sombra sutil combinando com o verde oliva */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content:flex-start ; /* Mantém a imagem sempre na base do card, alinhada */
     text-align: center;
-    margin-top: 20px;
+    border-bottom: 4px solid var(--primary-color); /* Linha sutil oliva na base do card */
 }
 
 .contador-item h3 {
-    font-size: 3rem;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    color: var(--secondary-color); /* Números em vermelho escuro */
+    margin-bottom: 15px;
 }
 
+.contador-item p {
+    
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: justify; /* Melhora a leitura dos relatos dos pacientes */
+    
+}
+
+/* Ajuste e diminuição das imagens de feedback */
+.contador-item img {
+    width: 100%;
+    max-width: 220px; /* Diminui o tamanho máximo da imagem para não quebrar o layout */
+    height: auto;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do print do feedback */
+    object-fit: contain;
+}
+.contador-item .img-3{
+    width: 50%;
+    max-width: 180px;
+    height: 70%;
+    object-position: bottom;
+}
+.contador-item .resultado1{
+    width: 100%;
+    max-width: 320px;
+    
+}
 /* Ebook Call to Action (Invertido para dar contraste na seção escura) */
 .btn-cta {
     display: inline-block;
     background-color: var(--text-white);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
@@ -226,16 +279,67 @@ nav ul li a:hover { color: var(--primary-color); }
 
 /* Rodapé */
 footer {
-    background: var(--primary-color); /* Invertido para um fechamento marcante e legível */
-    color: var(--bg-light);
+    background: var(--primary-color); /* Fundo em Verde Oliva */
+    color: var(--bg-extra-light);     /* Texto em Bege Claro para leitura perfeita */
     text-align: center;
     padding: 40px 0;
+}
+
+footer ul {
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    align-items: center;
+    display: flex;
+    gap: 15px; /* Espaço entre o Instagram e o Whatsapp */
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    font-size: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: var(--secondary-color) /* Cor que aparece ao passar o mouse */
 }
 
 /* Responsividade (Telas menores/Celular) */
 @media (max-width: 768px) {
     .flex-row { flex-direction: column; text-align: center; }
-    nav ul { display: none; } 
+    nav ul{display: none;}
     .contador-grid { flex-direction: column; gap: 30px; }
     h2 { font-size: 2rem; }
+    .mapa-placeholder{
+        display: block;
+    }
+    
+    .mapa-placeholder iframe {
+        box-sizing: border-box;
+        max-width: 100%; 
+        width: 90%;       /* Ocupa a largura total disponível na tela do celular */
+        height: 200px; /* Garante uma altura confortável para visualizar o mapa no celular */
+       
+    }
+    .mapa-placeholder img{
+        width: 90%;       /* Faz a imagem se adaptar à largura da tela */
+        max-width: 100%;   /* Impede que ela passe do limite da tela do celular */
+        height: 160px;     /* Fica com a mesma altura do mapa para manter a simetria */
+        object-fit: cover; /* ESSENCIAL: Faz a foto se adaptar ao espaço sem ficar esticada ou amassada */
+        border-radius: 8px;
+    }
+    .menu-mobile {
+        display: flex;
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    
+    
+
 }

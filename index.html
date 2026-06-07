@@ -1,118 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio Profissional</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="fotos/foto-marca-consulta.jpeg" />
+    <title>Helmana de Macêdo Nunes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
     <header>
-        <div class="nav-container">
-            <div class="logo">Helmana Macêdo</div>
-            <nav>
-                <ul>
-                    <li><a href="#quem-sou">Quem Sou</a></li>
-                    <li><a href="#atuacao">Atuação</a></li>
-                    <li><a href="#capacitacoes">Capacitações</a></li>
-                    <li><a href="#localizacao">Localização</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#presente" class="btn-nav">Ganhar Presente</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="nav-container">
+        <div class="logo">Helmana Macêdo</div>
+        <nav>
+          <ul>
+            <li><a href="#quem-sou">Quem Sou</a></li>
+            <li><a href="#atuacao">Atuação</a></li>
+            <li><a href="#capacitacoes">Capacitações</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#presente" class="btn-nav">Ganhar Presente</a></li>
+          </ul>
+          <select class="menu-mobile" onchange="location = this.value">
+            <option href="#quem-sou" value="#quem-sou">Quem sou</option>
+            <option href="atuacao" value="#atuacao">Atuação</option>
+            <option href="#capacitacoes" value="#capacitacoes">
+              Capacitações
+            </option>
+            <option href="#localizacao" value="#localizacao">
+              Localização
+            </option>
+            <option href="#resultados" value="#resultados">Resultados</option>
+            <option href="#presente" value="#presente" class="btn-nav">
+              Ganhar Presente
+            </option>
+          </select>
+        </nav>
+      </div>
     </header>
 
     <section id="quem-sou" class="section-padding">
-        <div class="container flex-row">
-            <div class="quem-sou-texto">
-                <h2>Quem Sou Eu</h2>
-                <p>Olá! Desenvolva aqui um breve resumo sobre você, sua trajetória e o que te move profissionalmente. Mostre a sua essência e como você ajuda as pessoas ou empresas com o seu trabalho.</p>
-            </div>
-            <div class="quem-sou-foto">
-                <div class="foto-placeholder"><i class="fas fa-user-tie fa-5x"></i></div>
-            </div>
+      <div class="container flex-row">
+        <div class="quem-sou-texto">
+          <h2>Quem Sou Eu</h2>
+          <p>
+            Olá! Sou Helmana Macedo, fonoaudióloga pela Universidade Federal da
+            Paraíba. Te proporciono um atendimento de alto padrão, humanizado e
+            com prática baseada em evidência científica.
+          </p>
         </div>
+        <div class="quem-sou-foto">
+          <div class="foto-placeholder">
+            <img src="fotos/perfil.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="atuacao" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="text-center">Minhas Áreas de Atuação</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-code card-icon"></i>
-                    <h3>Área 1</h3>
-                    <p>Descrição curta e objetiva sobre o que você faz nesta área específica.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-chart-line card-icon"></i>
-                    <h3>Área 2</h3>
-                    <p>Descrição curta e objetiva sobre o que você faz nesta área específica.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-lightbulb card-icon"></i>
-                    <h3>Área 3</h3>
-                    <p>Descrição curta e objetiva sobre o que você faz nesta área específica.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="text-center">Quem Eu Atendo</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <i class="fas fa-child card-icon"></i>
+            <h3>Crianças/Adolescentes</h3>
+            <p>
+              Crianças com atraso de fala, trocas na fala, transtornos do
+              neurodesenvolvimento, gagueira, disfunções orofaciais e lesões
+              vocais.
+            </p>
+          </div>
+          <div class="card">
+            <i class="fas fa-user card-icon"></i>
+            <h3>Adultos</h3>
+            <p>
+              Adultos com transtornos do neurodesenvolvimento, gagueira,
+              disfunções orofaciais, lesões vocais ou atendimento de performance
+              vocal.
+            </p>
+          </div>
+          <div class="card">
+            <i class="fas fa-building card-icon"></i>
+            <h3>Empresarial</h3>
+            <p>
+              Consultorias e treinamentos de comunicação para pessoas e
+              empresas.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="capacitacoes" class="section-padding">
-        <div class="container">
-            <h2 class="text-center">Minhas Capacitações</h2>
-            <ul class="lista-capacitacoes">
-                <li><i class="fas fa-certificate text-primary"></i> <strong>Formação Acadêmica:</strong> Detalhes sobre sua graduação ou cursos principais.</li>
-                <li><i class="fas fa-certificate text-primary"></i> <strong>Especialização:</strong> Suas principais competências técnicas ou certificações.</li>
-                <li><i class="fas fa-certificate text-primary"></i> <strong>Tecnologias e Ferramentas:</strong> Conhecimentos práticos do seu dia a dia.</li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2 class="text-center">Minhas Capacitações</h2>
+        <ul class="lista-capacitacoes">
+          <li>
+            <i class="fas fa-certificate text-primary"></i>
+            <strong>Formação Acadêmica:</strong> ABA (análise do comportamento
+            aplicada) Denver (Intervenção Precoce) DTTC (Apraxia de Fala)
+            Oratória de Alta Performance Coach Vocal Comunicação Aumentativa
+            Alternativa Transtorno do Espectro Autista Terapia de Fluência
+            (Gagueira) Musicoterapia Funções Orofaciais Fotobiomodulação (Laser)
+            aplicado à Voz VBMAPP (Avaliação Linguística e Comportamental)
+          </li>
+          <li>
+            <i class="fas fa-certificate text-primary"></i>
+            <strong>Experiências acadêmica:</strong>Ainda na Universidade
+            participei desde o início ativamente de projetos que complementam
+            meu conhecimento e prática clínica, como: Extensão em Fluência no
+            FLUA; Extensão e Pesquisa em Voz no ASSEVOX e no LIEV (Laboratório
+            Integrado de Estudos da Voz); Extensão de Avaliação Auditiva em
+            Bebês; Diretora do Centro Acadêmico 2021-2023; Monitora e
+            Palestrante no Congresso Brasileiro de Fonoaudiologia 2022; Estágio
+            Supervisionado no Instituto Cândida Vargas- Setor Canguru; em Voz e
+            Disfagia no Hospital Napoleão Laureano- Ambulatório; em Motricidade
+            Orofacial no HULW- Setor da Residência em Cirurgia e Traumatologia
+            Buco-Maxilo-Facial.
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section id="localizacao" class="section-padding bg-light">
-        <div class="container text-center">
-            <h2>Minha Localização</h2>
-            <p><i class="fas fa-map-marker-alt text-primary"></i> João Pessoa, Paraíba - Atendendo presencialmente e de forma remota para todo o Brasil.</p>
-            <div class="mapa-placeholder">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.824811122909!2d-34.85167592630531!3d-7.146246392858004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acc29722c9b369%3A0xb074066fb26c9f0a!2sDelta%20Center!5e0!3m2!1spt-BR!2sbr!4v1780671744089!5m2!1spt-BR!2sbr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+      <div class="container text-center">
+        <h2>Minha Localização</h2>
+        <p>
+          <i class="fas fa-map-marker-alt text-primary"></i> R. Empresário João
+          Rodrigues Alves, 125 - Bancários, João Pessoa - PB, 58051-022
+        </p>
+        <div class="mapa-placeholder">
+          <img src="fotos/foto-localização.jpeg" alt="" />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.824811122909!2d-34.85167592630531!3d-7.146246392858004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acc29722c9b369%3A0xb074066fb26c9f0a!2sDelta%20Center!5e0!3m2!1spt-BR!2sbr!4v1780671744089!5m2!1spt-BR!2sbr"
+            width="500"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
+      </div>
     </section>
 
     <section id="resultados" class="section-padding">
-        <div class="container">
-            <h2 class="text-center">Alguns Resultados</h2>
-            <div class="contador-grid">
-                <div class="contador-item">
-                    <h3 class="numero" data-alvo="50">0</h3>
-                    <p>Projetos Entregues</p>
-                </div>
-                <div class="contador-item">
-                    <h3 class="numero" data-alvo="98">0</h3>
-                    <p>% de Satisfação</p>
-                </div>
-                <div class="contador-item">
-                    <h3 class="numero" data-alvo="5">0</h3>
-                    <p>Anos de Experiência</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="text-center">Alguns Resultados</h2>
+        <div class="contador-grid">
+          <div class="contador-item">
+            <h3 class="numero" data-alvo="50">Atraso de fala</h3>
+            <p>
+              Esse paciente iniciou a terapia com 1 ano e 5 meses falando pouco
+              mais de 5 palavras. 3 meses depois, com 1 ano e 8 meses já tinha
+              atingido o marco do desenvolvimento para 2 anos, falando 200
+              palavras. E esse foi o feedback da mãe alguns meses depois
+            </p>
+            <img class="resultado1" src="fotos/resultado.1.jpeg" alt="" />
+          </div>
+          <div class="contador-item">
+            <h3 class="numero" data-alvo="98">Gagueira</h3>
+            <p>
+              Em 8 meses de tratamento, muita prática baseada em evidência
+              científica, constância e participação família, diminuímos
+              consideravelmente a porcentagem de disfluências típicas da
+              gagueira.
+            </p>
+            <img src="fotos/resultado2.jpeg" alt="" />
+          </div>
+          <div class="contador-item">
+            <h3 class="numero" data-alvo="5">Transtorno Fonológico</h3>
+            <p>
+              Em média 5 meses de tratamento e um rapaz com o repertório
+              fonológico 100% organizado. Realizou todos os exercício, se
+              empenhou e alcançou a alta!
+            </p>
+            <img class="img-3" src="fotos/resultado3.jpeg" alt="" />
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="presente" class="section-padding bg-primary text-white text-center">
-        <div class="container-narrow">
-            <h2>Tenho um Presente para Você! 🎁</h2>
-            <p>Preparei um E-book gratuito exclusivo para te ajudar a dar os primeiros passos no seu desenvolvimento. Clique abaixo para baixar agora mesmo.</p>
-            <a href="#" class="btn-cta" id="btn-download">Baixar E-book Grátis</a>
-        </div>
+    <section
+      id="presente"
+      class="section-padding bg-primary text-white text-center"
+    >
+      <div class="container-narrow">
+        <h2>Tenho um Presente para Você! 🎁</h2>
+        <p>
+          Eu e a Fonoaudióloga Bárbara Carolina preparamos um Ebook gratuito
+          como PRESENTE para você, mamãe, papai ou cuidador. Nele, você
+          descobrirá os primeiros passos para estimular a fala do seu bebê. Em
+          breve virá a continuação desse projeto com estratégias mais avançadas.
+          Clique abaixo e aproveite.
+        </p>
+        <a
+          href="ebook/Ebook estimulando a fala. FonoHelmana&Barbara..pdf"
+          class="btn-cta"
+          id="btn-download"
+          download
+          >Baixar E-book Grátis</a
+        >
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Meu Portfólio. Todos os direitos reservados.</p>
+        <ul>
+        <!-- Substitua pelo seu link real do Instagram se preferir -->
+        <li>
+          <a href="https://www.instagram.com/fonohelmana" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          
+        </li>
+
+        <!-- Link correto para o seu número de WhatsApp -->
+        <li>
+          <a href="https://wa.me/558381470314" target="_blank">
+            <i class="fab fa-whatsapp"></i> Whatsapp
+          </a>
+        </li>
+      </ul>
+      <p>&copy; 2026 Meu Portfólio. Todos os direitos reservados.</p>
+      
     </footer>
 
     <script href="script.js"></script>
-</body>
+  </body>
 </html>
