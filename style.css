@@ -1,4 +1,4 @@
-/* Configurações Globais */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -23,17 +23,109 @@ body {
     line-height: 1.6;
 }
 
-.fale-comigo{
-    text-decoration: none;
-    background-color: var(--secondary-color);
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-weight: 500;
+.container-whatsapp {
+    justify-content: flex-end;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    padding: 20px;
+    max-width: 350px; /* Evita que o bloco fique espalhado em telas grandes */
+    
 }
-.fale-comigo strong {
-    font-size: 22px;
+
+/* O texto de chamada (Harmonizado) */
+.chamada-whats {
+    font-size: 15px;
+    color: #4A5568; /* Um cinza escuro elegante, menos agressivo que o preto puro */
+    font-weight: 500;
+    margin-bottom: 25px; /* Espaçamento perfeito até o botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Micro-animação na seta para guiar o olhar */
+.chamada-whats .seta {
+    color: #25d366; /* Seta na cor do tema */
+    font-weight: bold;
+    animation: bounceSeta 1.5s infinite;
+}
+
+/* Botão Premium Ultra-Chamativo */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    padding: 20px 32px;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50px; /* Bordas totalmente arredondadas (padrão de apps modernos) */
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); /* Sombra suave brilhante */
+    transition: all 0.3s ease;
+    animation: pulsoGlow 2.5s infinite;
+}
+
+/* Comportamento de Hover profissional */
+.btn-whatsapp:hover {
+    transform: translateY(-2px); /* Flutua levemente para cima */
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    background-color: #20ba5a;
+}
+
+.btn-whatsapp:active {
+    transform: translateY(1px); /* Feedback de clique */
+}
+
+/* Animações calculadas (Suaves e contínuas) */
+@keyframes bounceSeta {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+}
+
+@keyframes pulsoGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes moveEsq {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+/* Animação da seta da direita (vai para a esquerda) */
+@keyframes moveDir {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+}
+
+.seta-esq, .seta-dir {
+    font-size: 18px;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    bottom: 22px;
+    padding: 5px;
+    font-size: 26px;
+    color: var(--secondary-color);
+}
+
+.seta-esq {
+    animation: moveEsq 1.2s infinite ease-in-out;
+}
+
+.seta-dir {
+    animation: moveDir 1.2s infinite ease-in-out;
 }
 
 .container {
@@ -354,6 +446,13 @@ footer a:hover {
 }
 /* Responsividade (Telas menores/Celular) */
 @media (max-width: 768px) {
+
+    .container-whatsapp{
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        margin: 0 auto;
+    }
     .botao-whatsapp{
         position: fixed;
         z-index: 100000;
