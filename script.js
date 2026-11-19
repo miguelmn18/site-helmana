@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const irmaos = grupo
             ? Array.from(grupo.children).filter((item) =>
                 item.matches(
-                  ".card, .specialty-card, .lista-capacitacoes li, .contador-item"
+                  ".card, .specialty-card, .clinic-space-card, .lista-capacitacoes li, .contador-item"
                 )
               )
             : [];
@@ -166,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // MICROINTERAÇÕES DOS CARDS
   // =========================================
   document
-    .querySelectorAll(".card, .specialty-card, .contador-item")
+    .querySelectorAll(".card, .specialty-card, .clinic-space-card, .contador-item")
     .forEach((card) => {
       card.addEventListener("pointerenter", () => {
         if (prefersReducedMotion || !card.animate) return;
@@ -460,6 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 });
+
 /* =========================================
    MENU RESPONSIVO — HELMANA MACÊDO
 ========================================= */
@@ -527,3 +527,103 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* =====================================================
+   INTERATIVIDADE — GALERIA AMPLIÁVEL DOS AMBIENTES
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const triggers = Array.from(
+    document.querySelectorAll(".lightbox-trigger")
+  );
+
+  if (!triggers.length) return;
+
+  const modal = document.createElement("div");
+
+  modal.className = "image-lightbox";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute(
+    "aria-label",
+    "Visualização ampliada da fotografia"
+  );
+
+  modal.innerHTML = `
+    <div class="image-lightbox-content">
+      <button
+        class="image-lightbox-close"
+        type="button"
+        aria-label="Fechar imagem"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <img src="" alt="" />
+
+      <p class="image-lightbox-caption"></p>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const modalImage = modal.querySelector("img");
+  const caption = modal.querySelector(".image-lightbox-caption");
+  const closeButton = modal.querySelector(".image-lightbox-close");
+
+  let activeTrigger = null;
+
+  const openModal = (trigger) => {
+    const image = trigger.querySelector("img");
+
+    if (!image) return;
+
+    activeTrigger = trigger;
+
+    modalImage.src = image.currentSrc || image.src;
+    modalImage.alt =
+      image.alt || "Fotografia do espaço de atendimento";
+
+    caption.textContent =
+      image.alt || "Espaço de atendimento";
+
+    modal.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+
+    closeButton.focus();
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+
+    modalImage.removeAttribute("src");
+
+    if (activeTrigger) {
+      activeTrigger.focus();
+    }
+
+    activeTrigger = null;
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      openModal(trigger);
+    });
+  });
+
+  closeButton.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+});
