@@ -460,3 +460,70 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 });
+/* =========================================
+   MENU RESPONSIVO — HELMANA MACÊDO
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("nav-toggle");
+  const navigation = document.getElementById("primary-navigation");
+
+  if (!toggle || !navigation) return;
+
+  const navLinks = navigation.querySelectorAll("a");
+
+  function openMenu() {
+    navigation.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Fechar menu de navegação");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    navigation.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menu de navegação");
+    document.body.classList.remove("menu-open");
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Fecha o menu ao selecionar uma seção.
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Fecha ao pressionar ESC.
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  // Fecha ao clicar fora do cabeçalho.
+  document.addEventListener("click", (event) => {
+    if (
+      !navigation.contains(event.target) &&
+      !toggle.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  // Evita que o menu permaneça aberto ao voltar para desktop.
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
+    }
+  });
+});
+

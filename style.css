@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
@@ -15,6 +16,15 @@
     --bg-extra-light: #F7F5F0;
     --text-dark: #2F3631;
     --text-white: #ffffff;
+
+    --card-bg: #ffffff;
+    --text-muted: #68736b;
+    --border-color: rgba(47, 54, 49, 0.09);
+    --shadow-card: 0 8px 26px rgba(47, 54, 49, 0.07);
+    --shadow-hover: 0 16px 34px rgba(47, 54, 49, 0.13);
+
+    --radius-card: 14px;
+    --transition: 0.3s ease;
 }
 
 html {
@@ -32,11 +42,26 @@ body {
 }
 
 img,
-iframe {
+iframe,
+video {
     max-width: 100%;
 }
 
-/* Containers */
+img {
+    vertical-align: middle;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================================
+   CONTAINERS
+========================================= */
 
 .container {
     width: 90%;
@@ -54,7 +79,9 @@ iframe {
     padding: 80px 0;
 }
 
-/* Cores e alinhamentos */
+/* =========================================
+   CORES E ALINHAMENTOS
+========================================= */
 
 .bg-light {
     background-color: var(--bg-light);
@@ -83,7 +110,9 @@ h2 {
     color: var(--primary-color);
 }
 
-/* Header e navegação */
+/* =========================================
+   HEADER E NAVEGAÇÃO
+========================================= */
 
 header {
     background-color: var(--text-white);
@@ -106,7 +135,7 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
     color: var(--primary-color);
 }
 
@@ -129,8 +158,8 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color var(--transition);
 }
 
 nav ul li a:hover {
@@ -139,17 +168,17 @@ nav ul li a:hover {
 
 .btn-nav {
     background-color: var(--primary-color);
-    color: white !important;
+    color: rgb(255, 255, 255) ;
     padding: 8px 16px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color var(--primary-color);
 }
 
 .btn-nav:hover {
     background-color: var(--secondary-color);
 }
 
-/* Atalho Quero ter um site no menu */
+/* Atalho Quero ter um site */
 
 nav ul li a.btn-site-nav {
     display: inline-flex;
@@ -170,7 +199,9 @@ nav ul li a.btn-site-nav:hover {
     transform: translateY(-2px);
 }
 
-/* Seção Quem Sou */
+/* =========================================
+   SEÇÃO QUEM SOU
+========================================= */
 
 .flex-row {
     display: flex;
@@ -202,18 +233,17 @@ nav ul li a.btn-site-nav:hover {
     object-fit: cover;
 }
 
-/* Ampliação da primeira área da página */
-
 #quem-sou.section-padding {
     padding-top: clamp(96px, 10vw, 128px);
     padding-bottom: clamp(88px, 9vw, 116px);
 }
 
-/* WhatsApp */
+/* =========================================
+   WHATSAPP
+========================================= */
 
 .container-whatsapp {
     justify-content: flex-end;
-    font-family: 'Inter', sans-serif;
     text-align: center;
     padding: 20px;
     max-width: 350px;
@@ -303,7 +333,9 @@ nav ul li a.btn-site-nav:hover {
     animation: moveDir 1.2s infinite ease-in-out;
 }
 
-/* Animações */
+/* =========================================
+   ANIMAÇÕES
+========================================= */
 
 @keyframes bounceSeta {
     0%, 100% {
@@ -349,7 +381,9 @@ nav ul li a.btn-site-nav:hover {
     }
 }
 
-/* Áreas de atuação */
+/* =========================================
+   ÁREAS DE ATUAÇÃO
+========================================= */
 
 .cards-grid {
     display: grid;
@@ -365,7 +399,7 @@ nav ul li a.btn-site-nav:hover {
     box-shadow: 0 4px 15px rgba(74, 93, 78, 0.05);
     text-align: center;
     border-top: 4px solid var(--primary-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
@@ -379,7 +413,9 @@ nav ul li a.btn-site-nav:hover {
     margin-bottom: 15px;
 }
 
-/* Capacitações */
+/* =========================================
+   CAPACITAÇÕES
+========================================= */
 
 .lista-capacitacoes {
     list-style: none;
@@ -404,7 +440,9 @@ nav ul li a.btn-site-nav:hover {
     margin-top: 4px;
 }
 
-/* Localização */
+/* =========================================
+   LOCALIZAÇÃO
+========================================= */
 
 .location-section {
     padding: 80px 0;
@@ -589,7 +627,9 @@ nav ul li a.btn-site-nav:hover {
     font-weight: 400;
 }
 
-/* Resultados */
+/* =========================================
+   RESULTADOS
+========================================= */
 
 .contador-grid {
     display: grid;
@@ -647,7 +687,9 @@ nav ul li a.btn-site-nav:hover {
     max-width: 320px;
 }
 
-/* Ebook */
+/* =========================================
+   EBOOK
+========================================= */
 
 .btn-cta {
     display: inline-block;
@@ -669,7 +711,9 @@ nav ul li a.btn-site-nav:hover {
     color: var(--text-white);
 }
 
-/* Chamada Quero ter um site */
+/* =========================================
+   CHAMADA QUERO TER UM SITE
+========================================= */
 
 .site-budget-cta {
     width: 100%;
@@ -728,7 +772,9 @@ nav ul li a.btn-site-nav:hover {
     background: var(--secondary-color);
 }
 
-/* Rodapé */
+/* =========================================
+   RODAPÉ
+========================================= */
 
 footer {
     background: var(--primary-color);
@@ -743,6 +789,7 @@ footer ul {
     bottom: 20px;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     list-style: none;
     padding: 0;
@@ -763,7 +810,9 @@ footer p {
     padding: 0 20px;
 }
 
-/* Animação de entrada */
+/* =========================================
+   ANIMAÇÃO DE ENTRADA
+========================================= */
 
 .reveal-on-scroll {
     opacity: 0;
@@ -776,7 +825,379 @@ footer p {
     transform: translateY(0);
 }
 
-/* Responsividade */
+/* =====================================================
+   ESPECIALIDADES E EXPERIÊNCIAS
+===================================================== */
+
+.specialties-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(119, 168, 129, 0.10), transparent 28%),
+        var(--bg-extra-light);
+}
+
+.specialties-heading {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.specialties-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.specialties-heading h2 {
+    margin-bottom: 14px;
+}
+
+.specialties-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #59645c;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+.specialty-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.specialty-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.specialty-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e8eee9;
+}
+
+.specialty-image::after {
+    content: "";
+    position: absolute;
+    inset: 45% 0 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgba(24, 35, 27, 0.15));
+}
+
+.specialty-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.specialty-card:hover .specialty-image img {
+    transform: scale(1.045);
+}
+
+.specialty-content {
+    position: relative;
+    flex: 1;
+    padding: 24px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.specialty-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 13px;
+    color: var(--secondary-color);
+    background: rgba(139, 30, 47, 0.08);
+    border-radius: 50%;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.specialty-content h3 {
+    margin-bottom: 9px;
+    color: var(--text-dark);
+    font-size: 1.02rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.specialty-content p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   AMBIENTES DA CLÍNICA
+   Atendimento Adulto e Espaço Infantil
+===================================================== */
+
+.clinic-spaces-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 90% 15%, rgba(119, 168, 129, 0.09), transparent 30%),
+        var(--bg-extra-light);
+}
+
+.clinic-space-block {
+    margin-top: 72px;
+}
+
+.clinic-space-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 850px;
+    margin-bottom: 32px;
+}
+
+.clinic-space-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: rgba(119, 168, 129, 0.15);
+    color: var(--primary-dark);
+    font-size: 23px;
+}
+
+.clinic-space-eyebrow {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--secondary-color);
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.clinic-space-heading h3 {
+    margin: 0 0 10px;
+    color: var(--text-dark);
+    font-size: clamp(23px, 3vw, 31px);
+    line-height: 1.3;
+}
+
+.clinic-space-heading p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.clinic-space-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.clinic-space-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.clinic-space-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.clinic-space-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e8eee9;
+}
+
+.clinic-space-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.clinic-space-card:hover .clinic-space-image img {
+    transform: scale(1.055);
+}
+
+.clinic-space-content {
+    flex: 1;
+    padding: 23px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.clinic-space-content > span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.clinic-space-content h4 {
+    margin: 0 0 9px;
+    color: var(--text-dark);
+    font-size: 1.08rem;
+    line-height: 1.4;
+}
+
+.clinic-space-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.91rem;
+    line-height: 1.7;
+}
+
+/* Identidade do espaço infantil */
+
+.clinic-space-block--children .clinic-space-icon {
+    background: rgba(139, 30, 47, 0.08);
+    color: var(--secondary-color);
+}
+
+.clinic-space-block--children .clinic-space-card {
+    border-bottom: 3px solid rgba(119, 168, 129, 0.65);
+}
+
+/* =====================================================
+   GALERIA — CONHEÇA NOSSO ESPAÇO
+   Compatibilidade com a estrutura space-gallery
+===================================================== */
+
+.space-gallery-section {
+    margin-top: 76px;
+}
+
+.space-gallery-heading {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.space-gallery-heading .section-index {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.space-gallery-heading h2 {
+    margin-bottom: 12px;
+}
+
+.space-gallery-heading p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.space-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 190px;
+    gap: 14px;
+}
+
+.space-gallery-item {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #e8eee8;
+    box-shadow: var(--shadow-card);
+}
+
+.space-gallery-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.space-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.space-gallery-item:hover img {
+    transform: scale(1.055);
+}
+
+/* =====================================================
+   RESPONSIVIDADE — TABLETS
+===================================================== */
+
+@media (max-width: 980px) {
+    .specialties-grid,
+    .clinic-space-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .space-gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 175px;
+    }
+
+    .space-gallery-item-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .location-layout {
+        gap: 30px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVIDADE — CELULARES
+===================================================== */
 
 @media (max-width: 768px) {
     header,
@@ -893,299 +1314,58 @@ footer p {
     .lista-capacitacoes li {
         text-align: left;
     }
-}
 
-@media (max-width: 380px) {
-    .logo {
-        font-size: 1.2rem;
-    }
-
-    .site-budget-button {
-        width: 100%;
-        font-size: 0.85rem;
-    }
-
-    .map-heading {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* =====================================================
-   ESPECIALIDADES E EXPERIÊNCIAS
-   ===================================================== */
-
-.specialties-section {
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 8% 12%, rgba(119, 168, 129, 0.10), transparent 28%),
-        var(--bg-extra-light);
-}
-
-.specialties-heading {
-    max-width: 760px;
-    margin: 0 auto 42px;
-    text-align: center;
-}
-
-.specialties-eyebrow {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: var(--secondary-color);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-}
-
-.specialties-heading h2 {
-    margin-bottom: 14px;
-}
-
-.specialties-intro {
-    max-width: 680px;
-    margin: 0 auto;
-    color: #59645c;
-    line-height: 1.8;
-    font-size: 1.02rem;
-}
-
-.specialties-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 26px;
-    align-items: stretch;
-}
-
-.specialty-card {
-    min-width: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 1px solid rgba(47, 54, 49, 0.08);
-    border-radius: 14px;
-    box-shadow: 0 8px 26px rgba(47, 54, 49, 0.07);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
-}
-
-.specialty-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 34px rgba(47, 54, 49, 0.13);
-}
-
-.specialty-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #e8eee9;
-}
-
-.specialty-image::after {
-    content: "";
-    position: absolute;
-    inset: 45% 0 0;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, rgba(24, 35, 27, 0.18));
-}
-
-.specialty-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.55s ease;
-}
-
-.specialty-card:hover .specialty-image img {
-    transform: scale(1.045);
-}
-
-.specialty-content {
-    position: relative;
-    flex: 1;
-    padding: 24px 24px 26px;
-    border-top: 3px solid var(--primary-color);
-}
-
-.specialty-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    margin-bottom: 13px;
-    color: var(--secondary-color);
-    background: rgba(139, 30, 47, 0.08);
-    border-radius: 50%;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-}
-
-.specialty-content h3 {
-    margin-bottom: 8px;
-    color: var(--text-dark);
-    font-size: 1.02rem;
-    line-height: 1.4;
-    letter-spacing: 0.025em;
-}
-
-.specialty-content p {
-    color: #68736b;
-    font-size: 0.94rem;
-    line-height: 1.65;
-}
-
-@media (max-width: 980px) {
-    .specialties-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-    }
-}
-
-@media (max-width: 600px) {
-    .specialties-section {
-        padding: 62px 0;
+    .specialties-section,
+    .clinic-spaces-section {
+        padding: 65px 0;
     }
 
     .specialties-heading {
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 
     .specialties-intro {
         font-size: 0.95rem;
     }
 
-    .specialties-grid {
+    .specialties-grid,
+    .clinic-space-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .specialty-card {
-        max-width: 460px;
+    .specialty-card,
+    .clinic-space-card {
+        max-width: 480px;
         width: 100%;
         margin: 0 auto;
     }
 
-    .specialty-image {
+    .specialty-image,
+    .clinic-space-image {
         aspect-ratio: 16 / 10;
     }
 
-    .specialty-content {
-        padding: 20px 21px 23px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .specialty-card,
-    .specialty-image img {
-        transition: none;
-    }
-}
-
-
-
-/* =====================================================
-   GALERIA — CONHEÇA NOSSO ESPAÇO
-   ===================================================== */
-
-.space-gallery-section {
-    margin-top: 76px;
-}
-
-.space-gallery-heading {
-    max-width: 720px;
-    margin: 0 auto 34px;
-    text-align: center;
-}
-
-.space-gallery-heading .section-index {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: var(--secondary-color);
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-}
-
-.space-gallery-heading h2 {
-    margin-bottom: 12px;
-}
-
-.space-gallery-heading p {
-    max-width: 620px;
-    margin: 0 auto;
-    color: var(--text-dark);
-    line-height: 1.75;
-}
-
-.space-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: 190px;
-    gap: 14px;
-}
-
-.space-gallery-item {
-    position: relative;
-    min-width: 0;
-    min-height: 0;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 13px;
-    background: #e8eee8;
-    box-shadow: 0 7px 22px rgba(47, 54, 49, 0.10);
-}
-
-.space-gallery-item-large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.space-gallery-item img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    transition: transform 0.55s ease, filter 0.55s ease;
-}
-
-.space-gallery-item:hover img {
-    transform: scale(1.055);
-    filter: saturate(1.05);
-}
-
-@media (max-width: 900px) {
-    .space-gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-auto-rows: 175px;
+    .specialty-content,
+    .clinic-space-content {
+        padding: 20px;
     }
 
-    .space-gallery-item-large {
-        grid-column: span 2;
-        grid-row: span 2;
+    .clinic-space-block {
+        margin-top: 48px;
     }
-}
 
-@media (max-width: 600px) {
+    .clinic-space-heading {
+        gap: 14px;
+    }
+
+    .clinic-space-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 19px;
+    }
+
     .space-gallery-section {
         margin-top: 52px;
     }
@@ -1205,14 +1385,431 @@ footer p {
         grid-column: span 2;
         grid-row: span 1;
     }
+}
 
-    .space-gallery-item {
-        border-radius: 9px;
+/* =====================================================
+   RESPONSIVIDADE — TELAS PEQUENAS
+===================================================== */
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .site-budget-button {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .map-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .specialty-content,
+    .clinic-space-content {
+        padding: 17px;
+    }
+
+    .specialty-content h3,
+    .clinic-space-content h4 {
+        font-size: 0.98rem;
+    }
+
+    .clinic-space-heading {
+        gap: 10px;
+    }
+
+    .clinic-space-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
     }
 }
 
+/* =====================================================
+   ACESSIBILIDADE E MOVIMENTO REDUZIDO
+===================================================== */
+
 @media (prefers-reduced-motion: reduce) {
-    .space-gallery-item img {
-        transition: none;
+    html {
+        scroll-behavior: auto;
     }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* =========================================
+   NAVEGAÇÃO RESPONSIVA — HELMANA MACÊDO
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(247, 245, 240, 0.96);
+  border-bottom: 1px solid rgba(47, 54, 49, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 18px rgba(25, 35, 28, 0.045);
+}
+
+.site-header .nav-container {
+  width: min(100% - 40px, 1240px);
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.site-header .logo {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-dark);
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .logo span {
+  color: var(--primary-dark);
+}
+
+.primary-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(16px, 2vw, 28px);
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 22px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  color: #465149;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--primary-color);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--primary-dark);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.site-header .btn-nav,
+.site-header .btn-site-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-header .btn-nav {
+  color: var(--primary-dark);
+  background: rgba(119, 168, 129, 0.13);
+  border: 1px solid rgba(119, 168, 129, 0.22);
+}
+
+.site-header .btn-site-nav {
+  color: #fff;
+  background: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.site-header .btn-nav:hover,
+.site-header .btn-site-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(47, 54, 49, 0.12);
+}
+
+.site-header .btn-nav:hover {
+  background: rgba(119, 168, 129, 0.22);
+}
+
+.site-header .btn-site-nav:hover {
+  background: #741727;
+}
+
+/* Botão do menu mobile: oculto no desktop */
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid rgba(47, 54, 49, 0.14);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(119, 168, 129, 0.12);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 5px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Ajuste para telas menores */
+
+@media (max-width: 1050px) {
+  .site-header .nav-container {
+    width: min(100% - 32px, 1240px);
+    gap: 18px;
+  }
+
+  .primary-navigation {
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+
+  .site-header .btn-nav,
+  .site-header .btn-site-nav {
+    padding: 0 10px;
+    font-size: 0.76rem;
+  }
+}
+
+/* Menu mobile e tablet */
+
+@media (max-width: 820px) {
+  .site-header .nav-container {
+    min-height: 68px;
+    width: calc(100% - 32px);
+    gap: 12px;
+  }
+
+  .site-header .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .primary-navigation {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    max-height: calc(100vh - 80px);
+    padding: 0 20px;
+    overflow-y: auto;
+    background: rgba(247, 245, 240, 0.99);
+    border-bottom: 1px solid rgba(47, 54, 49, 0.09);
+    box-shadow: 0 14px 24px rgba(25, 35, 28, 0.09);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      visibility 0.22s ease,
+      padding 0.22s ease;
+  }
+
+  .primary-navigation.is-open {
+    padding-top: 16px;
+    padding-bottom: 20px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: flex;
+    width: 100%;
+    min-height: 45px;
+    padding: 0 12px;
+    font-size: 0.94rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    background: rgba(119, 168, 129, 0.12);
+  }
+
+  .nav-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .site-header .btn-nav,
+  .site-header .btn-site-nav {
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Celulares estreitos */
+
+@media (max-width: 420px) {
+  .site-header .nav-container {
+    min-height: 64px;
+    width: calc(100% - 24px);
+  }
+
+  .site-header .logo {
+    font-size: 1.12rem;
+  }
+
+  .nav-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header .btn-nav,
+  .site-header .btn-site-nav {
+    width: 100%;
+  }
+}
+
+/* Acessibilidade: respeita preferência por menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .site-header *::before,
+  .site-header *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Evita que o cabeçalho cubra os títulos ao navegar pelas seções */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 }
